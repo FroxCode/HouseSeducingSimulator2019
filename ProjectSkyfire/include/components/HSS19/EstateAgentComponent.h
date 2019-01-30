@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////
 //
-// EstateAgentComponent.h (Simple 2D velocity)
+// EstateAgentComponent.h 
 // Created by Dale Sinnott
 // 08/01/2019
 //
@@ -14,16 +14,21 @@
 ///Frox
 #include "components/Component.h"
 
-///SFML
-#include"SFML/Graphics/Transform.hpp"
-
 class EstateAgentComponent : public Component
 {
 public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
-	EstateAgentComponent() : Component("EstateAgentComponent") {}
+	EstateAgentComponent() : Component("EstateAgentComponent") 
+	{
+		M_SPRITE="";
+		M_BACKGROUND="";
+
+		D_WELCOME="";
+		B_CONFIRM="";
+		D_CHOOSE_DATE="";
+	}
 
 	////////////////////////////////////////////////////////////
 	/// Destructor
@@ -33,22 +38,32 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Getters/Setters
 	////////////////////////////////////////////////////////////
-	
+	std::string getSpritePath() { return M_SPRITE; }
+	void setSpritePath(std::string s) { M_SPRITE = s; }
+
+	std::string getBackgroundPath() { return M_BACKGROUND; }
+	void setBackgroundPath(std::string s) { M_BACKGROUND = s; }
+
+
+	std::string getWelcome() { return D_WELCOME; }
+	void setWelcome(std::string s) { D_WELCOME = s; }
+
+	std::string getConfirmBtnTxt() { return B_CONFIRM; }
+	void setConfirmBtnTxt(std::string s) { B_CONFIRM = s; }
+
+	std::string getChooseDateDialogue() { return D_CHOOSE_DATE; }
+	void setChooseDateDialogue(std::string s) { D_CHOOSE_DATE = s; }
 
 private:
 	////////////////////////////////////////////////////////////
 	/// Member Variables
 	////////////////////////////////////////////////////////////
-	std::string const M_SPRITE; //PATH
-	std::string const M_BACKGROUND; //PATH
+	std::string M_SPRITE; //PATH
+	std::string M_BACKGROUND; //PATH
 
-	std::string const D_WELCOME; //DIALOGUE
-	std::string const B_WELCOME; //BUTTON
-
-	std::string const D_CHOOSE_DATE; //DIALOGUE
-	std::string const B_CHOOSE_DATE;//BUTTON
-
-
+	std::string D_WELCOME; //DIALOGUE
+	std::string B_CONFIRM; //BUTTON
+	std::string D_CHOOSE_DATE; //DIALOGUE
 
 };
 #endif;
