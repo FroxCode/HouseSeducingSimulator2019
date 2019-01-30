@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////
 //
-// HouseComponent.h (Simple 2D velocity)
+// HouseComponent.h 
 // Created by Dale Sinnott
 // 08/01/2019
 //
@@ -25,7 +25,22 @@ public:
 	////////////////////////////////////////////////////////////
 	HouseComponent() : Component("HouseComponent") 
 	{
-			
+		m_dated = m_mood = 0;
+		M_SPRITE; 
+		M_BACKGROUND;
+
+		M_NAME;
+		M_AGE;
+		M_ARCHITECTURE;
+		M_TRAITS[6];
+
+		D_QUESTIONS[3]; 
+		B_QUESTION_ONE_ANSWERS[3];
+		B_QUESTION_TWO_ANSWERS[3];
+		B_QUESTION_THREE_ANSWERS[3];
+
+		D_IMPRESSION[3];
+		D_PICK_REACTION[3];
 	}
 
 	////////////////////////////////////////////////////////////
@@ -36,20 +51,46 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Getters/Setters
 	////////////////////////////////////////////////////////////
-
+	
+	//Sprites
 	const std::string getSpritePath() { return M_SPRITE; }
+	void setSpritePath(std::string s) { M_SPRITE = s; }
+
 	const std::string getBackgroundPath() { return M_BACKGROUND; }
+	void setBackgroundPath(std::string s) { M_BACKGROUND = s; }
 
+	//Details
 	const std::string getHouseName() { return M_NAME; }
+	void setHouseName(std::string s) { M_NAME = s; }
+
 	const std::string getAge() { return M_AGE; }
+	void setAge(std::string s) { M_AGE = s; }
+
 	const std::string getArchitecture() { return M_ARCHITECTURE; }
+	void setArchitecture(std::string s) { M_ARCHITECTURE = s; }
+
 	const std::string* getTraits() { return M_TRAITS; }
+	void setTraits(std::string* s) { 
+		for (int i = 0; i < M_TRAITS->length(); i++){ M_TRAITS[i] = s[i]; }
+	}
 
+	//Dialogue
 	const std::string* getQuestions() { return D_QUESTIONS; }
+	void setQuestions(std::string* s) {
+		for (int i = 0; i < D_QUESTIONS->length(); i++) { D_QUESTIONS[i] = s[i]; }
+	}
 	const std::string* getQuestionOneAnswers() { return B_QUESTION_ONE_ANSWERS; }
+	void setQuestionOneAnswers(std::string* s) {
+		for (int i = 0; i < B_QUESTION_ONE_ANSWERS->length(); i++) { B_QUESTION_ONE_ANSWERS[i] = s[i]; }
+	}
 	const std::string* getQuestionTwoAnswers() { return B_QUESTION_TWO_ANSWERS; }
+	void setQuestionTwoAnswers(std::string* s) {
+		for (int i = 0; i < B_QUESTION_TWO_ANSWERS->length(); i++) { B_QUESTION_TWO_ANSWERS[i] = s[i]; }
+	}
 	const std::string* getQuestionThreeAnswers() { return B_QUESTION_THREE_ANSWERS; }
-
+	void setQuestionThreeAnswers(std::string* s) {
+		for (int i = 0; i < B_QUESTION_THREE_ANSWERS->length(); i++) { B_QUESTION_THREE_ANSWERS[i] = s[i]; }
+	}
 
 	/// -3, -2 = Bad
 	/// -1, 0, 1 = Neutral
@@ -72,8 +113,8 @@ public:
 		else
 			return D_PICK_REACTION[2];
 	}
+
 	void adjustMood(int amount) { m_mood += amount; }
-	
 	void setMood(int mood) { m_mood = mood; }
 	int getMood() { return m_mood; }
 
@@ -84,27 +125,25 @@ private:
 	////////////////////////////////////////////////////////////
 	/// Member Variables
 	////////////////////////////////////////////////////////////
-	const std::string M_SPRITE; ///PATH (Member Var)
-	const std::string M_BACKGROUND; ///PATH
+	std::string M_SPRITE; ///PATH (Member Var)
+	std::string M_BACKGROUND; ///PATH
 
 	///House Properties
-	const std::string M_NAME;
-	const std::string M_AGE;
-	const std::string M_ARCHITECTURE;
-	const std::string M_TRAITS[6];
+	std::string M_NAME;
+	std::string M_AGE;
+	std::string M_ARCHITECTURE;
+	std::string M_TRAITS[6];
 
-	const std::string D_QUESTIONS[3]; ///Dialogue
-	const std::string B_QUESTION_ONE_ANSWERS[3]; ///Button
-	const std::string B_QUESTION_TWO_ANSWERS[3];
-	const std::string B_QUESTION_THREE_ANSWERS[3];
+	std::string D_QUESTIONS[3]; ///Dialogue
+	std::string B_QUESTION_ONE_ANSWERS[3]; ///Button
+	std::string B_QUESTION_TWO_ANSWERS[3];
+	std::string B_QUESTION_THREE_ANSWERS[3];
 
-	const std::string D_IMPRESSION[3];
-	const std::string D_PICK_REACTION[3];
+	std::string D_IMPRESSION[3];
+	std::string D_PICK_REACTION[3];
 
 	int m_mood;
 	bool m_dated;
-
-
 
 };
 #endif;
