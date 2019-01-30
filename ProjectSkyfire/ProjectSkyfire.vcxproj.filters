@@ -60,6 +60,9 @@
     <ClCompile Include="src\scenes\MenuScene.cpp">
       <Filter>Source Files\scenes</Filter>
     </ClCompile>
+    <ClCompile Include="src\Dialogue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\components\BoxColliderComponent.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="include\components\HSS19\HouseComponent.h">
       <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Dialogue.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

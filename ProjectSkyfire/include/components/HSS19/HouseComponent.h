@@ -17,30 +17,33 @@
 ///SFML
 #include"SFML/Graphics/Transform.hpp"
 
+#include "Dialogue.h"
 class HouseComponent : public Component
 {
 public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
-	HouseComponent() : Component("HouseComponent") 
+	HouseComponent(std::string sprite, std::string background, 
+		std::string name, std::string age, std::string architecture, 
+		std::string* traits, std::string* questions, std::string* answersOne,
+		std::string* answersTwo, std::string* answersThree, 
+		std::string* impressions, std::string* pickReactions) : Component("HouseComponent")
 	{
 		m_dated = m_mood = 0;
-		M_SPRITE; 
-		M_BACKGROUND;
+		M_SPRITE = sprite; 
+		M_BACKGROUND = background;
+		M_NAME = name;
+		M_AGE = age;
+		M_ARCHITECTURE = architecture;
+		setTraits(traits);
+		setQuestions(questions);
+		setQuestionOneAnswers(answersOne);
+		setQuestionTwoAnswers(answersTwo);
+		setQuestionThreeAnswers(answersThree);
 
-		M_NAME;
-		M_AGE;
-		M_ARCHITECTURE;
-		M_TRAITS[6];
-
-		D_QUESTIONS[3]; 
-		B_QUESTION_ONE_ANSWERS[3];
-		B_QUESTION_TWO_ANSWERS[3];
-		B_QUESTION_THREE_ANSWERS[3];
-
-		D_IMPRESSION[3];
-		D_PICK_REACTION[3];
+		setImpressions(impressions);
+		setPickReactions(pickReactions);
 	}
 
 	////////////////////////////////////////////////////////////
@@ -104,6 +107,10 @@ public:
 		else
 			return D_IMPRESSION[2];
 	}
+	void setImpressions(std::string* s) {
+		for (int i = 0; i < D_IMPRESSION->length(); i++) { D_IMPRESSION[i] = s[i]; }
+
+	}
 	const std::string getPickedReaction() 
 	{ 
 		if (m_mood <= -2)
@@ -112,6 +119,10 @@ public:
 			return D_PICK_REACTION[1];
 		else
 			return D_PICK_REACTION[2];
+	}
+	void setPickReactions(std::string* s) {
+		for (int i = 0; i < D_PICK_REACTION->length(); i++) { D_PICK_REACTION[i] = s[i]; }
+
 	}
 
 	void adjustMood(int amount) { m_mood += amount; }
