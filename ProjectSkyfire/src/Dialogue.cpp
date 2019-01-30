@@ -1,8 +1,13 @@
 #include "Dialogue.h"
 
+/////////////////////////
+// TODO: Replace sprite/background asset file names [ 10 / 10 ]
+//		 Insert dialogue for each character [ 0 / 10 ]
+/////////////////////////
+
 ////////////////////////Real Etate Agent/////////////////////////
-const std::string Dialogue::REA_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::REA_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::REA_SPRITE = "assets/sprites/characters/RealEstateAgent.png";
+const std::string Dialogue::REA_BACKGROUND = "assets/sprites/background/EstateAgentsOffice.png";
 
 const std::string Dialogue::REA_WELCOME = "";
 const std::string Dialogue::REA_CHOOSE_DATE = "";
@@ -10,8 +15,8 @@ const std::string Dialogue::REA_CONFIRM = "Continue";
 
 
 ////////////////////////Dale/////////////////////////
-const std::string Dialogue::DALE_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::DALE_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::DALE_SPRITE = "assets/sprites/characters/LogCabin.png";
+const std::string Dialogue::DALE_BACKGROUND = "assets/sprites/background/Woods.png";
 
 const std::string Dialogue::DALE_NAME = "";
 const std::string Dialogue::DALE_AGE = "";
@@ -42,8 +47,8 @@ const std::string Dialogue::DALE_PICK_REACTION[3] = {
 
 
 ////////////////////////Remy/////////////////////////
-const std::string Dialogue::REMY_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::REMY_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::REMY_SPRITE = "assets/sprites/characters/BeachHouse.png";
+const std::string Dialogue::REMY_BACKGROUND = "assets/sprites/background/Gym.png";
 
 const std::string Dialogue::REMY_NAME = "";
 const std::string Dialogue::REMY_AGE = "";
@@ -74,8 +79,8 @@ const std::string Dialogue::REMY_PICK_REACTION[3] = {
 
 
 ////////////////////////Todd/////////////////////////
-const std::string Dialogue::TODD_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::TODD_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::TODD_SPRITE = "assets/sprites/characters/Suburban.png";
+const std::string Dialogue::TODD_BACKGROUND = "assets/sprites/background/BBQ.png";
 
 const std::string Dialogue::TODD_NAME = "";
 const std::string Dialogue::TODD_AGE = "";
@@ -106,8 +111,8 @@ const std::string Dialogue::TODD_PICK_REACTION[3] = {
 
 
 ////////////////////////Magnum/////////////////////////
-const std::string Dialogue::MAGNUM_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::MAGNUM_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::MAGNUM_SPRITE = "assets/sprites/characters/ModernHighEndHouse.png";
+const std::string Dialogue::MAGNUM_BACKGROUND = "assets/sprites/background/ArtGallery.png";
 
 const std::string Dialogue::MAGNUM_NAME = "";
 const std::string Dialogue::MAGNUM_AGE = "";
@@ -138,8 +143,8 @@ const std::string Dialogue::MAGNUM_PICK_REACTION[3] = {
 
 
 ////////////////////////Mabel/////////////////////////
-const std::string Dialogue::MABEL_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::MABEL_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::MABEL_SPRITE = "assets/sprites/characters/PrairiePioneer.png";
+const std::string Dialogue::MABEL_BACKGROUND = "assets/sprites/background/PrairieChurch.png";
 
 const std::string Dialogue::MABEL_NAME = "";
 const std::string Dialogue::MABEL_AGE = "";
@@ -170,8 +175,8 @@ const std::string Dialogue::MABEL_PICK_REACTION[3] = {
 
 
 ////////////////////////Firenze/////////////////////////
-const std::string Dialogue::FIRENZE_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::FIRENZE_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::FIRENZE_SPRITE = "assets/sprites/characters/Ranch.png";
+const std::string Dialogue::FIRENZE_BACKGROUND = "assets/sprites/background/Stable.png";
 
 const std::string Dialogue::FIRENZE_NAME = "";
 const std::string Dialogue::FIRENZE_AGE = "";
@@ -202,8 +207,8 @@ const std::string Dialogue::FIRENZE_PICK_REACTION[3] = {
 
 
 ////////////////////////Elyse/////////////////////////
-const std::string Dialogue::ELYSE_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::ELYSE_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::ELYSE_SPRITE = "assets/sprites/characters/Meditteranean.png";
+const std::string Dialogue::ELYSE_BACKGROUND = "assets/sprites/background/DogPark.png";
 
 const std::string Dialogue::ELYSE_NAME = "";
 const std::string Dialogue::ELYSE_AGE = "";
@@ -234,8 +239,8 @@ const std::string Dialogue::ELYSE_PICK_REACTION[3] = {
 
 
 ////////////////////////Sonny Six-String/////////////////////////
-const std::string Dialogue::SONNY_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::SONNY_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::SONNY_SPRITE = "assets/sprites/characters/Shack.png";
+const std::string Dialogue::SONNY_BACKGROUND = "assets/sprites/background/OpenAirConcert.png";
 
 const std::string Dialogue::SONNY_NAME = "";
 const std::string Dialogue::SONNY_AGE = "";
@@ -266,8 +271,8 @@ const std::string Dialogue::SONNY_PICK_REACTION[3] = {
 
 
 ////////////////////////Courtney/////////////////////////
-const std::string Dialogue::COURTNEY_SPRITE = "assets/sprites/characters/REPLACETHIS.png";
-const std::string Dialogue::COURTNEY_BACKGROUND = "assets/sprites/background/REPLACETHIS.png";
+const std::string Dialogue::COURTNEY_SPRITE = "assets/sprites/characters/Bungalow.png";
+const std::string Dialogue::COURTNEY_BACKGROUND = "assets/sprites/background/ModernChurch.png"; //TODO: fix change
 
 const std::string Dialogue::COURTNEY_NAME = "";
 const std::string Dialogue::COURTNEY_AGE = "";
