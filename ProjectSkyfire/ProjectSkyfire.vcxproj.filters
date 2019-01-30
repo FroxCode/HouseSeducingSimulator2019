@@ -134,5 +134,8 @@
     <ClInclude Include="include\components\ParticlePoolComponent.h">
       <Filter>Header Files\components</Filter>
     </ClInclude>
+    <ClInclude Include="include\components\HSS19\HouseComponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
