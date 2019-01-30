@@ -41,8 +41,10 @@ private:
 	////////////////////////////////////////////////////////////
 	std::string const M_SPRITE; //PATH
 	std::string const M_BACKGROUND; //PATH
+
 	std::string const D_WELCOME; //DIALOGUE
 	std::string const B_WELCOME; //BUTTON
+
 	std::string const D_CHOOSE_DATE; //DIALOGUE
 	std::string const B_CHOOSE_DATE;//BUTTON
 
