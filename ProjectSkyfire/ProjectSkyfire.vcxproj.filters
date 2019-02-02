@@ -143,5 +143,8 @@
     <ClInclude Include="include\Dialogue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\components\HSS19\EstateAgentComponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
