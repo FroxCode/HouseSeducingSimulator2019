@@ -127,25 +127,9 @@ public:
 	/// -3, -2 = Bad
 	/// -1, 0, 1 = Neutral
 	/// 2, 3 = Good
-	std::string getImpression() 
-	{ 
-		if(m_mood <= -2)
-			return static_cast<std::string>(D_IMPRESSION.at(0));
-		else if (m_mood <= 1)
-			return D_IMPRESSION->at(1);
-		else
-			return D_IMPRESSION->at(2);
-	}
+	std::vector<std::string> getImpressions() { return D_IMPRESSION; }
 	void setImpressions(std::vector<std::string> s) { D_IMPRESSION = s; }
-	const std::string getPickedReaction() 
-	{ 
-		if (m_mood <= -2)
-			return D_PICK_REACTION.at(0);
-		else if (m_mood <= 1)
-			return D_PICK_REACTION.at(1);
-		else
-			return D_PICK_REACTION.at(2);
-	}
+	std::vector<std::string> getPickedReactions() { return D_PICK_REACTION;	}
 	void setPickReactions(std::vector<std::string> s) {	D_PICK_REACTION = s; }
 
 	void adjustMood(int amount) { m_mood += amount; }
