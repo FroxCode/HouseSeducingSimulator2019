@@ -11,6 +11,12 @@
 ////////////////////////////////////////////////////////////
 // Includes
 ////////////////////////////////////////////////////////////
+///C++
+#include <vector>
+#include <string>
+#include <iostream>
+#include <algorithm>
+
 ///Frox
 #include "components/Component.h"
 
@@ -20,15 +26,48 @@
 #include "Dialogue.h"
 class HouseComponent : public Component
 {
+private:
+	////////////////////////////////////////////////////////////
+	/// Member Variables
+	////////////////////////////////////////////////////////////
+	std::string M_SPRITE; ///PATH (Member Var)
+	std::string M_BACKGROUND; ///PATH
+
+							  ///House Properties
+	std::string M_NAME;
+	std::string M_AGE;
+	std::string M_ARCHITECTURE;
+	/*std::string M_TRAITS[6];
+
+	std::string D_QUESTIONS[3]; ///Dialogue
+	std::string B_QUESTION_ONE_ANSWERS[3]; ///Button
+	std::string B_QUESTION_TWO_ANSWERS[3];
+	std::string B_QUESTION_THREE_ANSWERS[3];
+
+	std::string D_IMPRESSION[3];
+	std::string D_PICK_REACTION[3];*/
+	std::vector<std::string> M_TRAITS;
+
+	std::vector<std::string> D_QUESTIONS; ///Dialogue
+	std::vector<std::string> B_QUESTION_ONE_ANSWERS; ///Button
+	std::vector<std::string> B_QUESTION_TWO_ANSWERS;
+	std::vector<std::string> B_QUESTION_THREE_ANSWERS;
+
+	std::vector<std::string> D_IMPRESSION;
+	std::vector<std::string> D_PICK_REACTION;
+
+	int m_mood;
+	bool m_dated;
+
 public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
 	HouseComponent(std::string sprite, std::string background, 
 		std::string name, std::string age, std::string architecture, 
-		std::string* traits, std::string* questions, std::string* answersOne,
-		std::string* answersTwo, std::string* answersThree, 
-		std::string* impressions, std::string* pickReactions) : Component("HouseComponent")
+		std::vector<std::string> traits, std::vector<std::string> questions, std::vector<std::string> answersOne,
+		std::vector<std::string> answersTwo, std::vector<std::string> answersThree, 
+		std::vector<std::string> impressions, std::vector<std::string> pickReactions) : Component("HouseComponent")
 	{
 		m_dated = m_mood = 0;
 		M_SPRITE = sprite; 
@@ -72,58 +111,42 @@ public:
 	const std::string getArchitecture() { return M_ARCHITECTURE; }
 	void setArchitecture(std::string s) { M_ARCHITECTURE = s; }
 
-	const std::string* getTraits() { return M_TRAITS; }
-	void setTraits(std::string* s) { 
-		for (int i = 0; i < M_TRAITS->length(); i++){ M_TRAITS[i] = s[i]; }
-	}
+	const std::vector<std::string> getTraits() { return M_TRAITS; }
+	void setTraits(std::vector<std::string> s) { M_TRAITS = s; }
 
 	//Dialogue
-	const std::string* getQuestions() { return D_QUESTIONS; }
-	void setQuestions(std::string* s) {
-		for (int i = 0; i < D_QUESTIONS->length(); i++) { D_QUESTIONS[i] = s[i]; }
-	}
-	const std::string* getQuestionOneAnswers() { return B_QUESTION_ONE_ANSWERS; }
-	void setQuestionOneAnswers(std::string* s) {
-		for (int i = 0; i < B_QUESTION_ONE_ANSWERS->length(); i++) { B_QUESTION_ONE_ANSWERS[i] = s[i]; }
-	}
-	const std::string* getQuestionTwoAnswers() { return B_QUESTION_TWO_ANSWERS; }
-	void setQuestionTwoAnswers(std::string* s) {
-		for (int i = 0; i < B_QUESTION_TWO_ANSWERS->length(); i++) { B_QUESTION_TWO_ANSWERS[i] = s[i]; }
-	}
-	const std::string* getQuestionThreeAnswers() { return B_QUESTION_THREE_ANSWERS; }
-	void setQuestionThreeAnswers(std::string* s) {
-		for (int i = 0; i < B_QUESTION_THREE_ANSWERS->length(); i++) { B_QUESTION_THREE_ANSWERS[i] = s[i]; }
-	}
+	const std::vector<std::string> getQuestions() { return D_QUESTIONS; }
+	void setQuestions(std::vector<std::string> s) {	D_QUESTIONS = s; }
+	const std::vector<std::string> getQuestionOneAnswers() { return B_QUESTION_ONE_ANSWERS; }
+	void setQuestionOneAnswers(std::vector<std::string> s) { B_QUESTION_ONE_ANSWERS = s; }
+	const std::vector<std::string> getQuestionTwoAnswers() { return B_QUESTION_TWO_ANSWERS; }
+	void setQuestionTwoAnswers(std::vector<std::string> s) { B_QUESTION_TWO_ANSWERS = s; }
+	const std::vector<std::string> getQuestionThreeAnswers() { return B_QUESTION_THREE_ANSWERS; }
+	void setQuestionThreeAnswers(std::vector<std::string> s) { B_QUESTION_THREE_ANSWERS = s; }
 
 	/// -3, -2 = Bad
 	/// -1, 0, 1 = Neutral
 	/// 2, 3 = Good
-	const std::string getImpression() 
+	std::string getImpression() 
 	{ 
 		if(m_mood <= -2)
-			return D_IMPRESSION[0];
+			return static_cast<std::string>(D_IMPRESSION.at(0));
 		else if (m_mood <= 1)
-			return D_IMPRESSION[1];
+			return D_IMPRESSION->at(1);
 		else
-			return D_IMPRESSION[2];
+			return D_IMPRESSION->at(2);
 	}
-	void setImpressions(std::string* s) {
-		for (int i = 0; i < D_IMPRESSION->length(); i++) { D_IMPRESSION[i] = s[i]; }
-
-	}
+	void setImpressions(std::vector<std::string> s) { D_IMPRESSION = s; }
 	const std::string getPickedReaction() 
 	{ 
 		if (m_mood <= -2)
-			return D_PICK_REACTION[0];
+			return D_PICK_REACTION.at(0);
 		else if (m_mood <= 1)
-			return D_PICK_REACTION[1];
+			return D_PICK_REACTION.at(1);
 		else
-			return D_PICK_REACTION[2];
+			return D_PICK_REACTION.at(2);
 	}
-	void setPickReactions(std::string* s) {
-		for (int i = 0; i < D_PICK_REACTION->length(); i++) { D_PICK_REACTION[i] = s[i]; }
-
-	}
+	void setPickReactions(std::vector<std::string> s) {	D_PICK_REACTION = s; }
 
 	void adjustMood(int amount) { m_mood += amount; }
 	void setMood(int mood) { m_mood = mood; }
@@ -131,30 +154,6 @@ public:
 
 	void setDatedStatus(bool state) { m_dated = state; }
 	bool isDated() { return m_dated; }
-
-private:
-	////////////////////////////////////////////////////////////
-	/// Member Variables
-	////////////////////////////////////////////////////////////
-	std::string M_SPRITE; ///PATH (Member Var)
-	std::string M_BACKGROUND; ///PATH
-
-	///House Properties
-	std::string M_NAME;
-	std::string M_AGE;
-	std::string M_ARCHITECTURE;
-	std::string M_TRAITS[6];
-
-	std::string D_QUESTIONS[3]; ///Dialogue
-	std::string B_QUESTION_ONE_ANSWERS[3]; ///Button
-	std::string B_QUESTION_TWO_ANSWERS[3];
-	std::string B_QUESTION_THREE_ANSWERS[3];
-
-	std::string D_IMPRESSION[3];
-	std::string D_PICK_REACTION[3];
-
-	int m_mood;
-	bool m_dated;
 
 };
 #endif;
