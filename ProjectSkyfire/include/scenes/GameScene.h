@@ -18,7 +18,7 @@
 #include "systems/RenderSystem.h"
 
 class GameScene : public Scene
-{
+{ //mostly set up, need the JUICE for game logic
 public:
 	////////////////////////////////////////////////////////////
 	/// Member functions
