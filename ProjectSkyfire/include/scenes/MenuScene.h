@@ -23,6 +23,6 @@ public:
 	void initialise();
 	void update();
 	void render(std::shared_ptr<sf::RenderWindow> &window, std::shared_ptr<sf::Shader> shaders = nullptr);
-
+	//add stuff
 };
 #endif;
