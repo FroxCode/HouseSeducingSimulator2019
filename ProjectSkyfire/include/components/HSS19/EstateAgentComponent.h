@@ -20,14 +20,11 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Overloaded constructor
 	////////////////////////////////////////////////////////////
-	EstateAgentComponent() : Component("EstateAgentComponent") 
+	EstateAgentComponent(std::string sprite, std::string background, std::string welcome, std::string confirm, 
+		std::string chooseDate) : Component("EstateAgentComponent"),M_SPRITE(sprite), M_BACKGROUND(background),
+		D_WELCOME(welcome), B_CONFIRM(confirm), D_CHOOSE_DATE(chooseDate)
 	{
-		M_SPRITE="";
-		M_BACKGROUND="";
 
-		D_WELCOME="";
-		B_CONFIRM="";
-		D_CHOOSE_DATE="";
 	}
 
 	////////////////////////////////////////////////////////////
