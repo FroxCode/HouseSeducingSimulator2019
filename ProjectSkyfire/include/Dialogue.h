@@ -13,6 +13,11 @@
 static class Dialogue
 {
 public:
+	//////////////////////////////Menu///////////////////////////////
+	static const std::string MENU_BACKGROUND;
+	static const std::string MENU_PLAY_BUTTON;
+
+
 	////////////////////////Real Etate Agent/////////////////////////
 	static const std::string REA_SPRITE;
 	static const std::string REA_BACKGROUND;

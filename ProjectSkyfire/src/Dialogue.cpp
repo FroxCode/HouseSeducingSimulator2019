@@ -8,6 +8,12 @@
 //		 Add new replacement text from doc (edited dialogue of game characters)
 /////////////////////////
 
+
+//////////////////////////////Menu///////////////////////////////
+const std::string MENU_BACKGROUND = "assets/sprites/background/menu.png";
+const std::string MENU_PLAY_BUTTON = "assets/sprites/ui/playButton.png";
+
+
 ////////////////////////Real Etate Agent/////////////////////////
 const std::string Dialogue::REA_SPRITE = "assets/sprites/characters/RealEstateAgent.png";
 const std::string Dialogue::REA_BACKGROUND = "assets/sprites/background/EstateAgentsOffice.png";

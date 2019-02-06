@@ -14,9 +14,21 @@
 ///Frox
 #include "Scene.h"
 #include "Entity.h"
+#include "Dialogue.h"
+
 #include "systems/RenderSystem.h"
 #include "systems/ControlSystem.h"
 #include "systems/CollisionSystem.h"
+
+#include "components/HSS19/ButtonComponent.h"
+
+#include "components/BoxColliderComponent.h"
+#include "components/SpriteComponent.h"
+#include "components/TextComponent.h"
+#include "components/MusicComponent.h"
+#include "components/SoundComponent.h"
+#include "components/TransformComponent.h"
+
 
 class MenuScene : public Scene
 {
