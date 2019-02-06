@@ -9,7 +9,6 @@
 Game::Game()
 {
 	window = std::make_shared<sf::RenderWindow>(sf::VideoMode(defaultResolution.x, defaultResolution.y), GAME_TITLE);
-	window->setSize(sf::Vector2u(defaultResolution));
 	window->clear();
 	window->display();
 }
@@ -53,7 +52,7 @@ void Game::run()
 		}
 		while(FPS_lag >= MS_PER_UPDATE)
 		{
-			fixedUpdate(event);
+			fixedUpdate(&event);
 			
 			FPS_lag -= MS_PER_UPDATE;
 		}
@@ -64,14 +63,12 @@ void Game::run()
 void Game::initialize()
 {
 	///std::cout << "initializing" << std::endl;
+	sceneManager.initialise(window);
 }
-void Game::update()
-{
-	///std::cout << "updating" << std::endl;
-}
-void Game::fixedUpdate(sf::Event e)
+void Game::fixedUpdate(sf::Event *e)
 {
 	///std::cout << "updating (fixed)" << std::endl;
+	sceneManager.fixedUpdate(e);
 }
 void Game::render()
 {
@@ -79,7 +76,7 @@ void Game::render()
 	//TODO: update physics before rendering at % towards next fixed update
 	window->clear(sf::Color::Black);
 
-	///Draw in here
+	sceneManager.render();
 
 	window->display();
 }

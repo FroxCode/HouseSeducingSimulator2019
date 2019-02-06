@@ -1,4 +1,11 @@
 #include "scenes/GameScene.h"
+
+GameScene::GameScene(std::string name) :
+	Scene(name)
+{
+
+}
+
 void GameScene::initialise()
 {
 	

@@ -1,10 +1,11 @@
 #include "Dialogue.h"
 
 /////////////////////////
-// TODO: Replace sprite/background asset file names [ 10 / 10 ]
+// TODO: Clean up
+//		 Replace sprite/background asset file names [ 10 / 10 ]
 //		 Insert dialogue for each character [ 10 / 10 ]
 //		 PICK_REACTIONS replacement
-//		 Add new replacement text from doc (edited dialogue of chars)
+//		 Add new replacement text from doc (edited dialogue of game characters)
 /////////////////////////
 
 ////////////////////////Real Etate Agent/////////////////////////

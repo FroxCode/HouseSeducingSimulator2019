@@ -33,26 +33,15 @@ private:
 	std::string M_SPRITE; ///PATH (Member Var)
 	std::string M_BACKGROUND; ///PATH
 
-							  ///House Properties
+	///House Properties
 	std::string M_NAME;
 	std::string M_AGE;
 	std::string M_ARCHITECTURE;
-	/*std::string M_TRAITS[6];
-
-	std::string D_QUESTIONS[3]; ///Dialogue
-	std::string B_QUESTION_ONE_ANSWERS[3]; ///Button
-	std::string B_QUESTION_TWO_ANSWERS[3];
-	std::string B_QUESTION_THREE_ANSWERS[3];
-
-	std::string D_IMPRESSION[3];
-	std::string D_PICK_REACTION[3];*/
 	std::vector<std::string> M_TRAITS;
-
 	std::vector<std::string> D_QUESTIONS; ///Dialogue
 	std::vector<std::string> B_QUESTION_ONE_ANSWERS; ///Button
 	std::vector<std::string> B_QUESTION_TWO_ANSWERS;
 	std::vector<std::string> B_QUESTION_THREE_ANSWERS;
-
 	std::vector<std::string> D_IMPRESSION;
 	std::vector<std::string> D_PICK_REACTION;
 
@@ -80,7 +69,6 @@ public:
 		setQuestionOneAnswers(answersOne);
 		setQuestionTwoAnswers(answersTwo);
 		setQuestionThreeAnswers(answersThree);
-
 		setImpressions(impressions);
 		setPickReactions(pickReactions);
 	}
@@ -97,20 +85,16 @@ public:
 	//Sprites
 	const std::string getSpritePath() { return M_SPRITE; }
 	void setSpritePath(std::string s) { M_SPRITE = s; }
-
 	const std::string getBackgroundPath() { return M_BACKGROUND; }
 	void setBackgroundPath(std::string s) { M_BACKGROUND = s; }
 
 	//Details
 	const std::string getHouseName() { return M_NAME; }
 	void setHouseName(std::string s) { M_NAME = s; }
-
 	const std::string getAge() { return M_AGE; }
 	void setAge(std::string s) { M_AGE = s; }
-
 	const std::string getArchitecture() { return M_ARCHITECTURE; }
 	void setArchitecture(std::string s) { M_ARCHITECTURE = s; }
-
 	const std::vector<std::string> getTraits() { return M_TRAITS; }
 	void setTraits(std::vector<std::string> s) { M_TRAITS = s; }
 
@@ -135,9 +119,7 @@ public:
 	void adjustMood(int amount) { m_mood += amount; }
 	void setMood(int mood) { m_mood = mood; }
 	int getMood() { return m_mood; }
-
 	void setDatedStatus(bool state) { m_dated = state; }
 	bool isDated() { return m_dated; }
-
 };
 #endif;

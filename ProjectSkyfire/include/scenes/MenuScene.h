@@ -17,12 +17,13 @@
 class MenuScene : public Scene
 {
 public:
+	MenuScene(std::string name);
 	////////////////////////////////////////////////////////////
 	/// Member functions
 	////////////////////////////////////////////////////////////
 	void initialise();
-	void update();
-	void render(std::shared_ptr<sf::RenderWindow> &window, std::shared_ptr<sf::Shader> shaders = nullptr);
+	void update(sf::Event* e);
+	void render(std::shared_ptr<sf::RenderWindow> &window);
 
 };
 #endif;
