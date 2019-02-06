@@ -16,6 +16,7 @@
 #include "systems/CollisionSystem.h"
 #include "components/TextComponent.h"
 #include "systems/RenderSystem.h"
+#include "Dialogue.h"
 
 class GameScene : public Scene
 {
@@ -23,7 +24,7 @@ public:
 	////////////////////////////////////////////////////////////
 	/// Member functions
 	////////////////////////////////////////////////////////////
-	GameScene(std::string name) : Scene(name) {}
+	GameScene(std::string name);
 
 	void initialise();
 	void update(sf::Event* e);
