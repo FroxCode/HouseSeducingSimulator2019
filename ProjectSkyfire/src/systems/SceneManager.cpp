@@ -71,14 +71,11 @@ void SceneManager::setScene(std::string targetSceneName)
 	if (currentScene == "Menu")
 	{
 		menuScene = new MenuScene("Menu");
-		menuScene->initialise(w);
 		scenes.push_back(menuScene);
 	}
 	else if (currentScene == "Game")
 	{
 		gameScene = new GameScene("Game");
-		gameScene->initialise(w);
-
 		scenes.push_back(gameScene);
 	}
 }

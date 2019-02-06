@@ -58,6 +58,8 @@ public:
 		}
 		else 
 		{
+			std::cout << "File loaded: "
+				+ m_texturePath << std::endl;
 			m_sprite->setTexture(*m_texture);
 		}
 	}

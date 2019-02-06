@@ -1,6 +1,6 @@
 #include "systems/ControlSystem.h"
 
-void ControlSystem::update(sf::Event e)
+void ControlSystem::update(sf::Event* e)
 {
 	std::cout << "ControlSystem update..." << std::endl;
 	for (std::vector<Entity*>::iterator i = m_entities.begin(), e = m_entities.end(); i != e; i++)

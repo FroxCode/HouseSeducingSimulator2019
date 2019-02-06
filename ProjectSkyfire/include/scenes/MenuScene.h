@@ -41,12 +41,17 @@ public:
 	void update(sf::Event* e);
 	void render(std::shared_ptr<sf::RenderWindow> &window);
 
-	Entity* m_background;
-	Entity* m_playButton;
+	Entity m_background;
+	const std::string backgroundPath = "assets/sprites/backgrounds/mainMenu.png";
+
+	Entity m_playButton;
+	const std::string buttonPath = "assets/sprites/ui/button.png";
+	sf::Vector2f buttonPosition = sf::Vector2f(960, 540);
 
 	RenderSystem renderSystem;
 	ControlSystem controlSystem;
-	CollisionSystem collisionSystem;
+
+	bool changeScene;
 
 };
 #endif;

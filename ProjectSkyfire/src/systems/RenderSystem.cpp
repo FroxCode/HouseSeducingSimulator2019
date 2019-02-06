@@ -9,15 +9,15 @@ void RenderSystem::update(std::shared_ptr<sf::RenderWindow> w)
 		{
 			if ((*i)->getComponents().at(j)->getName() == "SpriteComponent")
 			{
+				SpriteComponent* tempSprite = static_cast<SpriteComponent*>((*i)->getComponents().at(j));
 				for (int k = 0; k < (*i)->getComponents().size(); k++)
 				{
-					if ((*i)->getComponents().at(j)->getName() == "TransformComponent")
+					if ((*i)->getComponents().at(k)->getName() == "TransformComponent")
 					{
-						static_cast<SpriteComponent*>((*i)->getComponents().at(j))->getSprite()->setPosition(
-							static_cast<TransformComponent*>((*i)->getComponents().at(j))->getPosition());
+						tempSprite->getSprite()->setPosition(static_cast<TransformComponent*>((*i)->getComponents().at(k))->getPosition());
 					}
 				}///update sprite position before draw
-				w->draw(*static_cast<SpriteComponent*>((*i)->getComponents().at(j))->getSprite());
+				w->draw(*(tempSprite->getSprite()));//wtf???
 			}
 		}
 	}
