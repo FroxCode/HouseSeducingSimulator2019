@@ -34,12 +34,14 @@ public:
 	void fixedUpdate(sf::Event* e);
 	void render();
 	void setScene(std::string targetSceneName);
-	std::string currentScene;
-	std::vector<Scene*> scenes;
 	void initialise(std::shared_ptr<sf::RenderWindow> &window);
+	
+	
 
 private:
 	std::shared_ptr<sf::RenderWindow> m_window;
+	std::string m_currentScene;
+	std::vector<Scene*> m_scenes;
 	MenuScene* menuScene;
 	GameScene* gameScene;
 };
