@@ -1,3 +1,11 @@
+Ignore this stuff, im still toying around with github features
+
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/FroxCode/HouseSeducingSimulator2019/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
