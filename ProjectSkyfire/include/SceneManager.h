@@ -42,7 +42,7 @@ private:
 	std::shared_ptr<sf::RenderWindow> m_window;
 	std::string m_currentScene;
 	std::vector<Scene*> m_scenes;
-	MenuScene* menuScene;
-	GameScene* gameScene;
+	MenuScene* m_menuScene;
+	GameScene* m_gameScene;
 };
 #endif;
