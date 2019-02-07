@@ -17,7 +17,7 @@ void SceneManager::initialise(std::shared_ptr<sf::RenderWindow> &window)
 }
 void SceneManager::fixedUpdate(sf::Event* evt)
 {
-	if (currentScene == "Menu")
+	if (m_currentScene == "Menu")
 	{
 		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Menu")
@@ -32,7 +32,7 @@ void SceneManager::fixedUpdate(sf::Event* evt)
 			}
 		}
 	}
-	else if (currentScene == "Game")
+	else if (m_currentScene == "Game")
 	{
 		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Game")
@@ -45,37 +45,37 @@ void SceneManager::fixedUpdate(sf::Event* evt)
 }
 void SceneManager::render()
 {
-	if (currentScene == "Menu")
+	if (m_currentScene == "Menu")
 	{
 		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Menu")
 			{
-				static_cast<MenuScene*>(*i)->render(window);
+				static_cast<MenuScene*>(*i)->render(m_window);
 			}
 		}
 	}
-	else if (currentScene == "Game")
+	else if (m_currentScene == "Game")
 	{
 		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Game")
 			{
-				static_cast<GameScene*>(*i)->render(window);
+				static_cast<GameScene*>(*i)->render(m_window);
 			}
 		}
 	}
 }
 void SceneManager::setScene(std::string targetSceneName)
 {
-	scenes.clear();
-	currentScene = targetSceneName;
-	if (currentScene == "Menu")
+	m_scenes.clear();
+	m_currentScene = targetSceneName;
+	if (m_currentScene == "Menu")
 	{
-		menuScene = new MenuScene("Menu");
-		scenes.push_back(menuScene);
+		m_menuScene = new MenuScene("Menu");
+		m_scenes.push_back(m_menuScene);
 	}
-	else if (currentScene == "Game")
+	else if (m_currentScene == "Game")
 	{
-		gameScene = new GameScene("Game");
-		scenes.push_back(gameScene);
+		m_gameScene = new GameScene("Game");
+		m_scenes.push_back(m_gameScene);
 	}
 }
