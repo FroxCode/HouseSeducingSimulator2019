@@ -12,7 +12,7 @@ SceneManager::~SceneManager()
 }
 void SceneManager::initialise(std::shared_ptr<sf::RenderWindow> &window)
 {
-	w = window;
+	m_window = window;
 	setScene("Menu");
 }
 void SceneManager::fixedUpdate(sf::Event* evt)
