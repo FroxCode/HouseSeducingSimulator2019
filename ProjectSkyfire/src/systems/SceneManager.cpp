@@ -19,7 +19,7 @@ void SceneManager::fixedUpdate(sf::Event* evt)
 {
 	if (m_currentScene == "Menu")
 	{
-		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
+		for (std::vector<Scene*>::iterator i = m_scenes.begin(), e = m_scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Menu")
 			{
 				static_cast<MenuScene*>(*i)->update(evt);
@@ -34,7 +34,7 @@ void SceneManager::fixedUpdate(sf::Event* evt)
 	}
 	else if (m_currentScene == "Game")
 	{
-		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
+		for (std::vector<Scene*>::iterator i = m_scenes.begin(), e = m_scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Game")
 			{
 				static_cast<GameScene*>(*i)->update(evt);
@@ -47,7 +47,7 @@ void SceneManager::render()
 {
 	if (m_currentScene == "Menu")
 	{
-		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
+		for (std::vector<Scene*>::iterator i = m_scenes.begin(), e = m_scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Menu")
 			{
 				static_cast<MenuScene*>(*i)->render(m_window);
@@ -56,7 +56,7 @@ void SceneManager::render()
 	}
 	else if (m_currentScene == "Game")
 	{
-		for (std::vector<Scene*>::iterator i = scenes.begin(), e = scenes.end(); i != e; i++) {
+		for (std::vector<Scene*>::iterator i = m_scenes.begin(), e = m_scenes.end(); i != e; i++) {
 			if ((*i)->getName() == "Game")
 			{
 				static_cast<GameScene*>(*i)->render(m_window);
