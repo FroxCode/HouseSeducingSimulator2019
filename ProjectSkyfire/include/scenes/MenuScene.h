@@ -47,6 +47,7 @@ public:
 	Entity m_playButton;
 	const std::string buttonPath = "assets/sprites/ui/button.png";
 	sf::Vector2f buttonPosition = sf::Vector2f(960, 540);
+	const std::string m_playButtonText = "Play";
 
 	RenderSystem renderSystem;
 	ControlSystem controlSystem;

@@ -17,7 +17,19 @@ void RenderSystem::update(std::shared_ptr<sf::RenderWindow> w)
 						tempSprite->getSprite()->setPosition(static_cast<TransformComponent*>((*i)->getComponents().at(k))->getPosition());
 					}
 				}///update sprite position before draw
-				w->draw(*(tempSprite->getSprite()));//wtf???
+				w->draw(*(tempSprite->getSprite()));
+			}
+			else if ((*i)->getComponents().at(j)->getName() == "TextComponent")
+			{
+				TextComponent* tempText = static_cast<TextComponent*>((*i)->getComponents().at(j));
+				for (int k = 0; k < (*i)->getComponents().size(); k++)
+				{
+					if ((*i)->getComponents().at(k)->getName() == "TransformComponent")
+					{
+						tempText->getText()->setPosition(static_cast<TransformComponent*>((*i)->getComponents().at(k))->getPosition());
+					}
+				}///update text position before draw
+				w->draw(*(tempText->getText()));
 			}
 		}
 	}

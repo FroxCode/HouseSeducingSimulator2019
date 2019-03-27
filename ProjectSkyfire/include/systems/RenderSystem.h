@@ -18,6 +18,7 @@
 #include "System.h"
 #include "components/SpriteComponent.h"
 #include "components/TransformComponent.h"
+#include "components/TextComponent.h"
 
 
 class RenderSystem : public System
