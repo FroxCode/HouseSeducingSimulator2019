@@ -54,6 +54,27 @@ public:
 	void setFontName(std::string fontName) { m_fontName = fontName; }
 	std::string getFontName() { return m_fontName; }
 
+	void setString(std::string string) 
+	{
+		m_text->setString(string);
+		m_text->setOrigin(m_text->getGlobalBounds().width / 2, m_text->getGlobalBounds().height / 2);
+	}
+	void setFillColor(sf::Color color)
+	{
+		m_text->setFillColor(color);
+	}
+	void setOutlineColor(sf::Color color)
+	{
+		m_text->setOutlineColor(color);
+	}
+	void setOutlineThickness(float thic)
+	{
+		m_text->setOutlineThickness(thic);
+	}
+	void setSize(sf::Vector2f size)
+	{
+		m_text->setScale(size);
+	}
 	void loadText()
 	{
 		m_text = std::make_shared<sf::Text>();
@@ -66,6 +87,7 @@ public:
 		else
 		{
 			m_text->setFont(*m_font);
+			m_text->setCharacterSize(200);
 		}
 	}
 private:

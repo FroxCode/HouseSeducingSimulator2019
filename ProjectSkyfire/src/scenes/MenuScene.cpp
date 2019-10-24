@@ -21,6 +21,8 @@ void MenuScene::initialise()
 	m_playButton.addComponent(new BoxColliderComponent());
 	static_cast<BoxColliderComponent*>(m_playButton.getComponents().at(3))->setBox(sf::FloatRect(0, 0, 300, 175));///hard and magic numbers but its fine until i figure out a more elegant solution
 	m_playButton.addComponent(new TextComponent());
+	static_cast<TextComponent*>(m_playButton.getComponents().at(4))->setString(m_playButtonText);
+	static_cast<TextComponent*>(m_playButton.getComponents().at(4))->setFillColor(sf::Color(0,0,0,255));
 
 	renderSystem.addEntity(&m_background);
 	renderSystem.addEntity(&m_playButton);

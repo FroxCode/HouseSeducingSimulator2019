@@ -39,6 +39,8 @@ public:
 	void setBox(sf::FloatRect box) { m_box = box; }
 
 	bool isColliding() { return m_collision; }
+	void setColliding(bool collision) { m_collision = collision; }
+
 
 private:
 	////////////////////////////////////////////////////////////
